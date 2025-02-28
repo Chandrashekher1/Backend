@@ -26,18 +26,25 @@ async function createCourse() {
     const result = await course.save()
 }
 
-createCourse()
+// async function updateCourse(id) {
+//     const course = await Course.findById(id)
 
+//     if(!course) return
+//     course.isPublish = true
+//     course.author = 'CP03'
 
-
-// async function getCourses() {
-//     const courses = await Course
-//     .find({author: 'CP',isPublish :true})
-//     .limit(10)
-//     .sort({name:1})
-//     .select({name:1,tags:1})
-    
-//     console.log(courses);
+//     const result = await course.save()
+//     console.log(result);
 // }
 
-// getCourses()
+// updateCourse('67bec11b282fc1c1324e1bd2')
+
+async function removeDocument(id) {
+    // const result = await Course.deleteMany({_id:id})
+    const result = await Course.findByIdAndDelete(id)
+
+    console.log(result);
+}
+
+removeDocument('67bec11b282fc1c1324e1bd2')
+

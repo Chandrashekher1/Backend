@@ -9,7 +9,7 @@ mongoose.connect("mongodb://localhost/courses", {
 
 const courseSchema = new mongoose.Schema({
     name: String,
-    author: String, // Fixed: cp is undefined
+    author: String, 
     tags: [String],
     isPublish: Boolean,
     date: { type: Date, default: Date.now }
@@ -22,14 +22,13 @@ async function getCourses() {
         .sort({ name: 1 })
         .limit(10)
         .select({ name: 1, author: 1 })
-        .exec();  // Optional but good practice
 
     return course;
 }
 
 async function run() {
     const result = await getCourses();
-    console.log(result);  // Fix: Log the result
+    console.log(result);  
 }
 
 run();
