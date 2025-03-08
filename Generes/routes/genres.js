@@ -16,8 +16,8 @@ const Genre = mongoose.model("Genre", genreSchema);
 
 router.get("/", async (req, res) => {
   const genres = await Genre.find().sort("name");
-  res.send(genres);
-});
+  res.send(genres)
+})
 
 router.post("/", async (req, res) => {
   const { error } = validateGenre(req.body);

@@ -9,7 +9,7 @@ mongoose.connect("mongodb://localhost/Genres", { useNewUrlParser: true, useUnifi
     .then(() => console.log("Connected to MongoDB..."))
     .catch(err => console.error("Could not connect to MongoDB...", err));
 
-app.use("/api/genres", genres);
+// app.use("/api/genres", genres);
 app.use("/api/customers", customers)
 
 const port = process.env.PORT || 3000;
